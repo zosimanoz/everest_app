@@ -1,0 +1,61 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block branding %}
+   <div style="margin-left: -20px; margin-right: -20px; padding: 15px; background-color:#000;">
+        <a href="/admin" style="color:#fff; text-decoration:none;font-size:large;margin-left:-8px;">
+            Dashboard
+        </a>
+    </div>
+{% endblock branding %}
+
+
+{% block content %}
+    <div>
+        <div class="alert alert-info"><strong>Query Details</strong></div>
+        <table class="table table-striped">
+            <tr>
+                <td><b>Name</b></td>
+                <td>{{ item.name }}</td>
+            </tr>
+            <tr>
+                <td><b>Email</b></td>
+                <td>{{ item.email }}</td>
+            </tr>
+            <tr>
+                <td><b>Phone Number</b></td>
+                <td>{{ item.contact_number }}</td>
+            </tr>
+            <tr>
+                <td><b>Service Ordered</b></td>
+                <td>{{ item.service_name }}</td>
+            </tr>
+            <tr>
+                <td><b>Service Type</b></td>
+                <td>{{ item.service_type_name }}</td>
+            </tr>
+                <tr>
+                <td><b>Service Category</b></td>
+                <td>{{ item.service_category_name }}</td>
+            </tr>
+            <tr>
+                <td><b>Order Date</b></td>
+                <td>{{ item.ordered_on }}</td>
+            </tr>
+            <tr>
+                <td><b>Order Status</b></td>
+                {% if item.status == 0 %}
+                    <td><span class="btn btn-primary">RECEIVED</span></td>
+                {% elif item.status == 1 %}
+                    <td><span class="btn btn-primary">PENDING</span></td>
+                {% else %}
+                    <td><span class="btn btn-primary">COMPLETED</span></td>
+                {% endif %}
+            </tr>
+        </table>
+    </div>
+    <br />
+
+    <a href="/admin/orders/order/" class="btn btn-success">Go Back</a>
+
+{% endblock %}

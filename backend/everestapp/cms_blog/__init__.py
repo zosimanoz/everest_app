@@ -1,0 +1,1 @@
+default_app_config = 'cms_blog.apps.CmsBlogConfig'

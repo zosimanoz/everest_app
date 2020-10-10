@@ -1,0 +1,43 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block branding %}
+   <div style="margin-left: -20px; margin-right: -20px; padding: 15px; background-color:#000;">
+        <a href="/admin" style="color:#fff; text-decoration:none;font-size:large;margin-left:-8px;">
+            Dashboard
+        </a>
+    </div>
+{% endblock branding %}
+
+
+{% block content %}
+    <div>
+        <div class="alert alert-info"><strong>Query Details</strong></div>
+        <table class="table table-striped">
+            <tr>
+                <td><b>Name</b></td>
+                <td>{{ item.name }}</td>
+            </tr>
+            <tr>
+                <td><b>Email</b></td>
+                <td>{{ item.email }}</td>
+            </tr>
+            <tr>
+                <td><b>Phone Number</b></td>
+                <td>{{ item.contact_number }}</td>
+            </tr>
+            <tr>
+                <td><b>Message</b></td>
+                <td>{{ item.message }}</td>
+            </tr>
+            <tr>
+                <td><b>Date</b></td>
+                <td>{{ item.created_on }}</td>
+            </tr>
+        </table>
+    </div>
+    <br />
+
+    <a href="/admin/cms_contact/queries/" class="btn btn-success">Go Back</a>
+
+{% endblock %}

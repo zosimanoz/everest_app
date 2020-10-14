@@ -6,6 +6,7 @@ To run the project :
 4. activate the virutalenv : source venv/bin/activate
 5. execute pip install -r requirements.txt
 6. execute python manage.py runserver
+7. create super user python manage.py createsuperuser
 
 
 The django app will run in port 8000
